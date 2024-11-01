@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 1
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: init
         run: bin/metacpan-docker init
@@ -25,16 +25,6 @@ jobs:
 
       - name: up api_test
         run: docker-compose up -d api_test
-      - name: down
-        run: docker-compose down
-
-      - name: up github-meets-cpan
-        run: docker-compose up -d github-meets-cpan
-      - name: down
-        run: docker-compose down
-
-      - name: up github-meets-cpan-cron
-        run: docker-compose up -d github-meets-cpan-cron
       - name: down
         run: docker-compose down
 

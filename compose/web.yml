@@ -1,0 +1,9 @@
+---
+services:
+  web-server:
+    profiles:
+      - cloud-es
+    ports:
+      - "5001:80"
+    networks:
+      - web-network
